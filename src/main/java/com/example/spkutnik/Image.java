@@ -9,6 +9,7 @@ public class Image extends Content {
     public Image(String name) {
         this.name = name;
         addDelay();
+        loadImage();
     }
 
     private void addDelay() {
@@ -17,6 +18,10 @@ public class Image extends Content {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    private void loadImage() {
+        ImageLoaderFactory.create(this.name).load(this.name);
     }
 
     @Override
