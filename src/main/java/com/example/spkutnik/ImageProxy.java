@@ -7,9 +7,8 @@ public class ImageProxy implements Element {
     private String dimensions;
     private Image realImage;
 
-    public ImageProxy(String url, String dimensions) {
+    public ImageProxy(String url) {
         this.url = url;
-        this.dimensions = dimensions;
     }
 
     private void loadImage() {
