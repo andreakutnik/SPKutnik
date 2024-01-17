@@ -1,4 +1,4 @@
-package com.example.spkutnik;
+package com.example.spkutnik.models;
 
 import java.util.List;
 
@@ -31,6 +31,16 @@ public class ImageProxy implements Element {
     @Override
     public List<Section> getSubchapters() {
         return null;
+    }
+
+    @Override
+    public String render() {
+        return null;
+    }
+
+    @Override
+    public void accept(Visitor<?> visitor) {
+
     }
 
     @Override

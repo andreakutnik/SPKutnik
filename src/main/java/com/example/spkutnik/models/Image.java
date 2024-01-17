@@ -1,4 +1,6 @@
-package com.example.spkutnik;
+package com.example.spkutnik.models;
+
+import com.example.spkutnik.services.ImageLoaderFactory;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -46,5 +48,15 @@ public class Image extends Content {
     @Override
     public List<Section> getSubchapters() {
         return null;
+    }
+
+    @Override
+    public String render() {
+        return null;
+    }
+
+    @Override
+    public void accept(Visitor<?> visitor) {
+
     }
 }

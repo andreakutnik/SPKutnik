@@ -1,4 +1,4 @@
-package com.example.spkutnik;
+package com.example.spkutnik.services;
 
 // BMPImageContent class
 public class BMPImageContent implements ImageContent {

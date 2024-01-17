@@ -1,4 +1,4 @@
-package com.example.spkutnik;
+package com.example.spkutnik.services;
 
 // ImageContent interface
 public interface ImageContent {

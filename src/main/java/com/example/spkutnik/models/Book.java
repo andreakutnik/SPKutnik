@@ -1,11 +1,9 @@
-package com.example.spkutnik;
+package com.example.spkutnik.models;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-class Book {
+public class Book implements Visitee {
     private String title;
     private List<Author> authors;
     private List<Element> elements;
@@ -37,6 +35,20 @@ class Book {
         }
     }
 
+    public String render() {
+        StringBuilder renderedContent = new StringBuilder("Book: " + this.title + "\nAuthors:\n");
+
+        for (Author author : this.authors) {
+            renderedContent.append(author.display()).append("\n");
+        }
+
+        for (Element element : this.elements) {
+            renderedContent.append(element.render()).append("\n");
+        }
+
+        return renderedContent.toString();
+    }
+
     public List<Element> getChapters() {
         List<Element> chapters = new ArrayList<>();
         for (Element element : this.elements) {
@@ -45,6 +57,14 @@ class Book {
             }
         }
         return chapters;
+    }
+
+    @Override
+    public void accept(Visitor<?> visitor) {
+        visitor.visitBook(this);
+        for (Element element : this.elements) {
+            element.accept(visitor);
+        }
     }
 }
 
