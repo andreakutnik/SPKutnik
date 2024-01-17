@@ -11,9 +11,15 @@ public abstract class Content implements Element {
 
 class Paragraph extends Content {
     private String text;
+    private AlignStrategy alignStrategy;
 
     public Paragraph(String text) {
         this.text = text;
+        this.alignStrategy = new AlignLeft();
+    }
+
+    public void setAlignStrategy(AlignStrategy alignStrategy) {
+        this.alignStrategy = alignStrategy;
     }
 
     @Override
@@ -36,13 +42,15 @@ class Paragraph extends Content {
         return null;
     }
 
-    @Override
     public void print() {
-        System.out.println("Paragraph: " + this.text);
+        alignStrategy.render(this);
     }
 
     public String getText() {
         return this.text;
+    }
+
+    public void setAlignStrategy(AlignCenter alignCenter) {
     }
 }
 
