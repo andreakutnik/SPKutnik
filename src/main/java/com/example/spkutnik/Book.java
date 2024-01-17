@@ -5,27 +5,23 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class Book {
+class Book {
     private String title;
     private List<Author> authors;
-    private List<Chapter> chapters;
+    private List<Element> elements;
 
     public Book(String title) {
         this.title = title;
         this.authors = new ArrayList<>();
-        this.chapters = new ArrayList<>();
+        this.elements = new ArrayList<>();
     }
 
     public void addAuthor(Author author) {
         this.authors.add(author);
     }
 
-    public void addChapter(Chapter chapter) {
-        this.chapters.add(chapter);
-    }
-
-    public List<Chapter> getChapters() {
-        return this.chapters;
+    public void addContent(Element element) {
+        this.elements.add(element);
     }
 
     public void print() {
@@ -36,24 +32,19 @@ public class Book {
             author.display();
         }
 
-        for (Chapter chapter : this.chapters) {
-            chapter.print();
+        for (Element element : this.elements) {
+            element.print();
         }
     }
 
-    // Create a new Chapter with the given name and add it to the Book
-    public int createNewChapter(String name) {
-        Chapter chapter = new Chapter(name);
-        this.addChapter(chapter);
-        return this.chapters.indexOf(chapter);
-    }
-
-    // Get the Chapter at the specified index
-    public Chapter getChapter(int index) {
-        if (index >= 0 && index < this.chapters.size()) {
-            return this.chapters.get(index);
-        } else {
-            return null; // or throw an exception based on your application's logic
+    public List<Element> getChapters() {
+        List<Element> chapters = new ArrayList<>();
+        for (Element element : this.elements) {
+            if (element instanceof Section) {
+                chapters.add(element);
+            }
         }
+        return chapters;
     }
 }
+

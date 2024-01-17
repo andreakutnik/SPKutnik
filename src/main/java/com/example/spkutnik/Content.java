@@ -1,9 +1,10 @@
 package com.example.spkutnik;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Content {
+public abstract class Content implements Element {
+    public abstract String getImage();
+
     public abstract void print();
 }
 
@@ -14,12 +15,29 @@ class Paragraph extends Content {
         this.text = text;
     }
 
-    public void print() {
-        System.out.println("Paragraph: " + this.text);
+    @Override
+    public String getName() {
+        return "Paragraph";
     }
 
-    public String getParagraph() {
-        return this.text;
+    @Override
+    public List<Element> getSubChapters() {
+        return null;
+    }
+
+    @Override
+    public List<Section> getSubchapters() {
+        return null;
+    }
+
+    @Override
+    public String getImage() {
+        return null;
+    }
+
+    @Override
+    public void print() {
+        System.out.println("Paragraph: " + this.text);
     }
 
     public String getText() {
@@ -34,6 +52,12 @@ class Image extends Content {
         this.name = name;
     }
 
+    @Override
+    public String getImage() {
+        return "Image";
+    }
+
+    @Override
     public void print() {
         System.out.println("Image with name: " + this.name);
     }
@@ -41,7 +65,18 @@ class Image extends Content {
     public String getName() {
         return this.name;
     }
+
+    @Override
+    public List<Element> getSubChapters() {
+        return null;
+    }
+
+    @Override
+    public List<Section> getSubchapters() {
+        return null;
+    }
 }
+
 
 class Table extends Content {
     private String title;
@@ -50,8 +85,29 @@ class Table extends Content {
         this.title = title;
     }
 
+    @Override
+    public String getName() {
+        return "Table";
+    }
+
+    @Override
+    public List<Element> getSubChapters() {
+        return null;
+    }
+
+    @Override
+    public List<Section> getSubchapters() {
+        return null;
+    }
+
+    @Override
+    public String getImage() {
+        return null;
+    }
+
+    @Override
     public void print() {
-        System.out.println("Table: " + this.title);
+        System.out.println("Table with title: " + this.title);
     }
 
     public String getTitle() {
