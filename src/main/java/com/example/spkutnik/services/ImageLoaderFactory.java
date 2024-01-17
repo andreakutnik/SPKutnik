@@ -1,4 +1,8 @@
-package com.example.spkutnik;
+package com.example.spkutnik.services;
+
+import com.example.spkutnik.services.BMPImageLoader;
+import com.example.spkutnik.services.ImageLoader;
+import com.example.spkutnik.services.JPGImageLoader;
 
 public class ImageLoaderFactory {
 

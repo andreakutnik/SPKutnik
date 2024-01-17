@@ -1,4 +1,4 @@
-package com.example.spkutnik;
+package com.example.spkutnik.models;
 
 import java.util.ArrayList;
 import java.util.List;

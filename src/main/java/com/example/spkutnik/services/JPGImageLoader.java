@@ -1,4 +1,4 @@
-package com.example.spkutnik;
+package com.example.spkutnik.services;
 
 // JPGImageLoader class
 public class JPGImageLoader implements ImageLoader {

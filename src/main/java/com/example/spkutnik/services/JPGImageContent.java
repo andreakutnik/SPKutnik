@@ -1,4 +1,6 @@
-package com.example.spkutnik;
+package com.example.spkutnik.services;
+
+import com.example.spkutnik.services.ImageContent;
 
 // JPGImageContent class
 public class JPGImageContent implements ImageContent {

@@ -1,4 +1,6 @@
-package com.example.spkutnik;
+package com.example.spkutnik.services;
+
+import com.example.spkutnik.models.Paragraph;
 
 // AlignRight class
 public class AlignRight implements AlignStrategy {

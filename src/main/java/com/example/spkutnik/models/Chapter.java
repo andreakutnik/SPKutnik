@@ -1,7 +1,8 @@
-package com.example.spkutnik;
+package com.example.spkutnik.models;
+
+import com.example.spkutnik.models.SubChapter;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Chapter {

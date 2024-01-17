@@ -1,11 +1,11 @@
-package com.example.spkutnik;
+package com.example.spkutnik.models;
 
-import java.util.ArrayList;
+import com.example.spkutnik.models.Book;
+import com.example.spkutnik.models.Element;
+
 import java.util.List;
 
-import java.util.List;
-
-public class TableOfContents {
+public class TableOfContents implements Visitee{
     private Book book;
 
     public TableOfContents(Book book) {
@@ -27,6 +27,16 @@ public class TableOfContents {
             System.out.println(indentation + "- " + subChapter.getName());
             subChapter.print();
         }
+    }
+
+    @Override
+    public void accept(Visitor<?> visitor) {
+
+    }
+
+    @Override
+    public String render() {
+        return null;
     }
 }
 

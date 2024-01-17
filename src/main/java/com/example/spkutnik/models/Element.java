@@ -1,4 +1,4 @@
-package com.example.spkutnik;
+package com.example.spkutnik.models;
 
 import java.util.List;
 
@@ -9,4 +9,8 @@ interface Element {
     List<Element> getSubChapters();
 
     List<Section> getSubchapters();
+
+    String render();
+
+    void accept(Visitor<?> visitor);
 }

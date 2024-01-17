@@ -1,9 +1,9 @@
-package com.example.spkutnik;
+package com.example.spkutnik.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Section implements Element {
+public class Section implements Element, Visitee {
     private String name;
     private List<Element> elements;
 
@@ -48,5 +48,17 @@ class Section implements Element {
             }
         }
         return subchapters;
+    }
+
+    @Override
+    public String render() {
+        return null;
+    }
+
+    @Override
+    public void accept(Visitor<?> visitor) {
+        for (Element element : this.elements) {
+            element.accept(visitor);
+        }
     }
 }
