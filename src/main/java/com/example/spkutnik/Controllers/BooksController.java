@@ -21,6 +21,7 @@ public class BooksController {
     }
 
     // GET /books/{id}
+    //nu e ok
     @GetMapping("/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable long id) {
         Book foundBook = findBookById(id);
@@ -65,7 +66,7 @@ public class BooksController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    
+
     private Book findBookById(long id) {
         return books.stream()
                 .filter(book -> book.getId() == id)
