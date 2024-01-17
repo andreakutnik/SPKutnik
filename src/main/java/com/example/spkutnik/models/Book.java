@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book implements Visitee {
+    private long id;
     private String title;
     private List<Author> authors;
     private List<Element> elements;
@@ -12,6 +13,38 @@ public class Book implements Visitee {
         this.title = title;
         this.authors = new ArrayList<>();
         this.elements = new ArrayList<>();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
+    public List<Element> getElements() {
+        return elements;
+    }
+
+    public void setElements(List<Element> elements) {
+        this.elements = elements;
     }
 
     public void addAuthor(Author author) {
@@ -67,4 +100,3 @@ public class Book implements Visitee {
         }
     }
 }
-
