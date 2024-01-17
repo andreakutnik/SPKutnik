@@ -23,20 +23,16 @@ public class SubChapter {
             item.print();
         }
     }
-
-    // Create a new Paragraph with the given text and add it to the SubChapter
     public void createNewParagraph(String text) {
         Paragraph paragraph = new Paragraph(text);
         this.addContent(paragraph);
     }
 
-    // Create a new Image with the given name and add it to the SubChapter
     public void createNewImage(String name) {
         Image image = new Image(name);
         this.addContent(image);
     }
 
-    // Create a new Table with the given title and add it to the SubChapter
     public void createNewTable(String title) {
         Table table = new Table(title);
         this.addContent(table);
