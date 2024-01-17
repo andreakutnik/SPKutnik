@@ -65,7 +65,7 @@ public class BooksController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
+    
     private Book findBookById(long id) {
         return books.stream()
                 .filter(book -> book.getId() == id)
